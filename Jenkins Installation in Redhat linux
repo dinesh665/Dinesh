@@ -1,0 +1,20 @@
+yum -y install updates
+
+Java Installation:
+
+yum install java-1.8*
+java -version
+find /usr/lib/jvm/java-1.8* | head -n 3
+Set Java Env Perminent:
+vi .bash_profile
+echo $JAVA_HOME
+source ~/.bash_profile
+yum -y install wget
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum -y install jenkins
+systemctl start jenkins
+systemctl enable jenkins
+chkconfig jenkins on
+systemctl status jenkins
+vi /var/lib/jenkins/secrets/initialAdminPassword

@@ -1,3 +1,5 @@
+cat /etc/os-release*
+
 yum update -y
 
 Java Installation:
